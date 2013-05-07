@@ -1,0 +1,69 @@
+  <tr>
+		<td bordercolor="#000000" height="35" colspan="6">
+		<p align="center"><b><font size="4" face="Arial Unicode MS">Predictive 
+		Model %d</font></b></td>
+	</tr>
+	<tr>
+		<td width="216" bordercolor="#000000" height="62">
+		<p align="center"><b><font size="4" face="Arial Unicode MS">Discrimination <br>
+		at large</font></b></td>
+		<td width="343" bordercolor="#000000" height="62">
+		<p align="center"><b><font size="4" face="Arial Unicode MS">Discrimination
+		at <br>
+		optimal cut-off point</font><font size="4"><br>
+		</font></b><font face="Arial Unicode MS" size="3">(red circle in plot) 
+		is at threshold t = %.4f</font></td>
+		<td width="7" height="62">
+		<p align="center">　</td>
+		<td bordercolor="#FF9900" colspan="3" height="62">
+		<p align="center"><font size="4" face="Arial Unicode MS"><b>Calibration</b></font><b><font size="5" face="Arial Unicode MS"> </font><font size="4"> <br>
+		
+	</tr>
+	<tr>
+		<td width="216" bordercolor="#000000" align="center">
+		<font face="Arial Unicode MS">AUC = %.3f</font></td>
+		<td width="343" bordercolor="#000000" align="center">
+		<font face="Arial Unicode MS">F-Score = %.3f</font></td>
+		<td width="7">
+		<p align="center">　</td>
+		<td bordercolor="#FF9900" align="center" colspan="3">
+		<font face="Arial Unicode MS">Brier Score = %.2f</font></td>
+	</tr>
+	<tr>
+		<td width="216" bordercolor="#000000" align="center">
+		<font face="Arial Unicode MS">STD = %.3f</font></td>
+		<td width="343" bordercolor="#000000" align="center">
+		<font face="Arial Unicode MS">Sensitivity = %.3f</font></td>
+		<td width="7" rowspan="3">
+		<p align="center">　<p align="center">　</td>
+		<td bordercolor="#FF9900" align="center" width="194" valign="middle">
+		<font face="Arial Unicode MS">Goodness of Fit Test :</font></td>
+		<td bordercolor="#FF9900" align="center" width="169">
+		<font face="Arial Unicode MS">Hosmer-Lemeshow</font></td>
+		<td bordercolor="#FF9900" align="center" width="189">
+		<font face="Arial Unicode MS">Hosmer-Lemeshow </font></td>
+	</tr>
+	<tr>
+		<td width="216" bordercolor="#000000" height="25">
+		<p align="center"><font face="Arial Unicode MS">C.I. = (%.3f, %.3f)</font></td>
+		<td width="343" bordercolor="#000000" height="25">
+		<p align="center"><font face="Arial Unicode MS">Specificity = %.3f</font></td>
+		<td bordercolor="#FF9900" align="center" width="194" rowspan="2">
+		<font face="Arial Unicode MS">&nbsp;P-value</font></td>
+		<td bordercolor="#FF9900" width="169">
+		<p align="center">
+		<font face="Arial Unicode MS">C-Test</font></td>
+		<td bordercolor="#FF9900" width="189">
+		<p align="center">
+		<font face="Arial Unicode MS">H-Test</font></td>
+	</tr>
+	<tr>
+		<td width="216" bordercolor="#000000">
+		<p align="center">　</td>
+		<td width="343" bordercolor="#000000">
+		<p align="center"><font face="Arial Unicode MS">Type I error =%.3f</font></td>
+		<td bordercolor="#FF9900" width="169" align="center">
+		<font face="Arial Unicode MS">%.2f</font></td>
+		<td bordercolor="#FF9900" width="189" align="center">
+		<font face="Arial Unicode MS">%.2f</font></td>
+	</tr>

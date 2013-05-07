@@ -1,0 +1,231 @@
+<?php $uid = md5(uniqid(rand())); ?>
+<html>
+<head>
+  <title>Webcalibsis</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="Imagetoolbar" content="no">
+  <style type="text/css">
+
+html {height:100%;}
+body {height:100%; margin:0; padding:0;}
+<?xml version="1.0" encoding="iso-8859-1"?>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+
+#clock { font-family: Arial, Helvetica, sans-serif; font-size: 1em;
+color: black; background-color: white; border: 2px solid black; padding: 4px; }
+
+/* set the background image to full capacity of the viewing area */
+#bg {position:fixed; top:0; left:0; width:100%; height:100%;}
+
+/* places the content on top of the background image */
+#content {position:relative; z-index:1;}
+
+/* added css support */
+#pb_outer {
+	height: 20px;
+	border: 0px inset #000000;
+	width: 100%;
+	margin: 1px auto;
+	display: none;
+}
+#pb_inner {
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #003399;
+	height: 20px;
+	width: 1px;
+	text-align: center;
+}
+  </style><!--[if IE ]>
+<style type="text/css">
+
+/* some css fixes for IE browsers */
+html {overflow-y:hidden;}
+body {overflow-y:auto;}
+#bg {position:absolute; z-index:-1;}
+#content {position:static;}
+
+</style>
+<![endif]-->
+
+<script type="text/javascript">
+var HttpRequestObject = false;
+var a = 10;
+
+if(window.XMLHttpRequest) {
+   HttpRequestObject = new XMLHttpRequest();
+}
+else if(window.ActiveXObject) {
+   HttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+}
+function startProgress(uid) {
+   document.getElementById('upload').style.display = 'none';
+   document.getElementById('pb_outer').style.display = 'block';
+   setTimeout('getProgress("' + uid + '")', 2000);
+}
+ function sleep(delay)
+ {
+     var start = new Date().getTime();
+     while (new Date().getTime() < start + delay);
+ }
+
+function getProgress(uid) {
+   if(HttpRequestObject) {
+      HttpRequestObject.open('GET', 'getprogress.php?uid=' + uid, true);
+      HttpRequestObject.onreadystatechange = function() {
+      	
+      	if(HttpRequestObject.readyState == 1&& a<100 ) {
+            var progress = 1;
+            a = a + progress;
+            document.getElementById('pb_inner').style.width = a + '%';
+            document.getElementById('pb_inner').innerHTML = a + '%';  
+            setTimeout('getProgress("' + uid + '")', 400);   
+            sleep(300);                         
+         }      	
+         
+         if(HttpRequestObject.readyState == 4 && HttpRequestObject.status == 200) {
+            var progress = HttpRequestObject.responseText;
+            document.getElementById('pb_inner').style.width = progress + '%';
+            document.getElementById('pb_inner').innerHTML = progress + '%';
+            if(progress < 100) {
+               setTimeout('getProgress("' + uid + '")', 100);
+            }
+            else {
+               document.getElementById('pb_inner').innerHTML = 'Hold on, processing now...!';
+            }
+         }
+      }
+      HttpRequestObject.send(null);
+   }
+}
+
+startTime = new Date ( );
+startSecs = Math.floor(startTime.getTime()/1000);
+
+function init ( )
+{
+  timeDisplay = document.createTextNode ( "" );
+  document.getElementById("clock").appendChild ( timeDisplay );
+}
+
+function updateClock ( )
+{
+  var currentTime = new Date ( );
+
+  var currSecs = Math.floor(currentTime.getTime()/1000);
+  var elapsed = currSecs - startSecs;
+
+  var currentHours = Math.floor(elapsed/3600);
+  var currentMinutes = Math.floor((elapsed - currentHours*3600)/60);
+  var currentSeconds = elapsed - currentHours*3600 - currentMinutes*60;
+
+  // Pad the minutes and seconds with leading zeros, if required
+  currentHours = ( currentHours < 10 ? "0" : "" ) + currentHours;
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+
+  // Compose the string for display
+  var currentTimeString = "Elapsed time: " + currentHours + ":" + currentMinutes + ":" + currentSeconds ;
+
+  // Update the time display
+  document.getElementById("clock").firstChild.nodeValue =  currentTimeString ;
+}
+
+
+  </script>
+
+  <!--meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"-->
+</head>
+<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+<div style="text-align: center;" id="bg">
+<br>
+<br>
+<br>
+<br>
+<br>
+<img alt="" src="./image/background.gif" height="500px" width="1000px"></div>
+<div align="center" id="content">
+<br>
+<br>
+<table
+ style="text-align: left; margin-left: auto; margin-right: auto; width: 1100px; height: 600px;"
+ border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 20%; height: 20%;"><br>
+      </td>
+      <td style="vertical-align: top; width: 45%; height: 20%;"><br>
+      </td>
+      <td style="vertical-align: top; height: 20%; width: 5%;"><br>
+      </td>
+      <td
+ style="text-align: right; vertical-align: bottom; height: 20%; width: 30%;"><img
+ style="width: 392px; height: 99px;" alt="logo_ucsd_health"
+ src="image/logo_ucsd_health.jpg"></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 20%; height: 40%;"><br>
+      </td>
+      <td style="vertical-align: bottom; width: 45%; height: 40%;"><img
+ style="width: 200px; height: 135px;" alt="logo_webcalibsis"
+ src="image/logo_webcalibsis.jpg" vspace="5"><br>
+      </td>
+      <td style="vertical-align: top; height: 40%; width: 5%;"><br>
+      </td>
+      <td style="vertical-align: top; width: 30%; height: 40%;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 20%; height: 30%;"><br>
+      </td>
+      <td style="vertical-align: top; width: 45%; height: 30%;">      
+      
+      <div >
+			<form onSubmit="startProgress('<?php echo $uid; ?>');" action="upload.php" method="post" enctype="multipart/form-data" name="upload" id="upload" >
+			  <input type="hidden" name="APC_UPLOAD_PROGRESS" id="progress_key" value="<?php echo $uid; ?>" />
+			  <input size=60 type="file" name="file" id="file" />
+			  <br>
+			  <input type="submit" name="submit" id="submit" value="Analysis!" />
+			</form>
+					
+					<div id="pb_outer">
+					  <div>
+					  <form onSubmit="startProgress('<?php echo $uid; ?>');" action="upload.php" method="post" enctype="multipart/form-data" name="upload2" id="upload2" >
+						  <input type="hidden" name="APC_UPLOAD_PROGRESS" id="progress_key" value="<?php echo $uid; ?>" />
+						  <input size=60 type="file" name="file2" id="file" />
+						  <br>
+						  <input type="submit" name="submit" id="submit" value="Analysis!" />
+					  </form>
+					</div>
+				
+				  <div id="pb_inner"></div>
+					</div>
+					<iframe style="display: none" id="upload_frame" name="upload_frame"></iframe>	
+				</div>
+				<div style="width: 23em; text-align: center; margin: 20px auto;">
+				  <span id="clock">&nbsp;</span>
+				</div>
+				
+      </td>
+      <td style="vertical-align: top; height: 30%; width: 5%;"><br>
+      </td>
+      <td style="vertical-align: top; width: 30%; height: 30%;"><a
+ href="instruction.html">Instructions</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4" rowspan="1"
+ style="text-align: center; vertical-align: middle; height: 10%; width: 100%;">
+      <small><span style="font-family: Arial;">This page can be used
+under the terms of
+GNU general public licence as published by the Free Software Foundation.</span></small><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

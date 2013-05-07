@@ -1,0 +1,27 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>%s</title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="1" width="1158" align: center>
+	<tr>
+		<td width="565" align="center" bordercolor="#000000" colspan="2">
+		<font face="Batang" size="5">Discrimination</font></td>
+		<td width="7" align="center">　</td>
+		<td width="564"  align="center" bordercolor="#FF9900" colspan="3"><font face="Batang" size="5">Calibration </font></td>
+	</tr>
+	<tr>
+		<td width="565" align="center" bordercolor="#000000" colspan="2">
+		<img border="0" src="%s" width="560" height="420"></td>
+		<td width="7" align="center">		　</td>
+		<td align="center" bordercolor="#FF9900" colspan="3">
+		<img border="0" src="%s" width="560" height="420"></td>
+	</tr>
+	
+	
