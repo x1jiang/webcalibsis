@@ -1,0 +1,198 @@
+
+
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>A Web-based toolkit for AUC and Calibration Analysis</title>
+</head>
+
+<body>
+
+<font face="Arial">
+
+<!--==========   Set up outside border   ==========-->
+</font>
+<div align="center">
+<table bgcolor="#f6c60e" border="0" cellpadding="2" cellspacing="0" width="784">
+	<tr>
+		<td align="CENTER" bgcolor="#C0C0C0">
+		<table bgcolor="white" border="0" cellpadding="10" cellspacing="0" width="1003">
+			<tr>
+				<td>
+
+<font face="Arial">
+
+<!--==========   Title material   ==========-->
+
+				</font>
+
+				<table border="0" cellpadding="0" cellspacing="0" width="972">
+					<tr>
+						<td width="339">
+						<p align="justify">
+						<font face="Arial">
+						<br>
+						</font>
+						<td align="RIGHT" valign="TOP" width="354">
+						<p align="justify">						
+						<font face="Arial">						
+						<img border="0" src="http://scholar.privacy.cs.cmu.edu/auc_demo/image/ucsd_health_logo.jpg" width="353" height="78"></font></td>
+						<td align="RIGHT" valign="middle" width="306">						
+						　</td>
+					</tr>
+					<tr>
+						<td width="972" colspan="3">
+						<p align="center">
+						<font face="Arial">
+						<big><b class="blue">Online Discrimination and Calibration Analysis</b></big><br>
+						<img src="http://www.rad.jhmi.edu/jeng/javarad/roc/graphics/spacer.gif" alt="" height="6"><br>
+						This website provides a fast and easy opportunity to evaluate the discriminatory 
+						ability and calibration of your model. All 						you need to do is to upload a text file providing the predicted probabilities of your model in a first column and the 							corresponding labels in a second column. Let's get started!</font></tr>
+				</table>
+				　<table border="0" cellpadding="0" cellspacing="0" width="972">
+					<tr>
+						<td valign="TOP" width="972">
+						<p align="justify"><font face="Arial"><b class="blue">
+						Instructions:</b>&nbsp; Our web service evaluates the 
+						uploaded outputs of probabilistic models. We access 
+						their discriminatory ability as well as the calibration. The 
+						input file need to be a plain text 						file.
+						</font><span class="Apple-style-span">
+						<span style="font-family: Arial; font-size: 15px; letter-spacing: normal">
+						E</span></span><span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Simsun; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; "><span class="Apple-style-span" style="border-collapse: collapse; font-family: Arial; font-size: 15px">ach 
+						row represents an observation. In order to estimate the 
+						necessary measurements, one needs to pass the 
+						probabilistic outputs (one column per model) and the 
+						true class labels (the last column).</span></span><span style="border-collapse: collapse; font-family: Arial; color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px"> 
+						Some sample formats look as following:</span><font face="Arial">
+						</font>
+						</p>
+						<ul>
+							<li>
+							<p align="justify"><font face="Arial">the first/second/third column contains the probability predictions obtained by your modelss</font></li>
+							<li>
+							<p align="justify"><font face="Arial">the last column contains the 1/0 
+							class labels corresponding to the predictions in the first column</li>
+							e.g.<br>
+							</font>
+							<div align=center>
+							<table border="1" width="278">
+								<tr>
+									<td width="73" align="center">
+									<font face="Arial">Model A</font></td>
+									<td width="99" align="center">
+									<font face="Arial">&nbsp;[Model 
+									B]</font></td>
+									<td width="84" align="center">
+									<font face="Arial">Label</font></td>
+								</tr>
+								<tr>
+									<td width="73" align="center">
+									<font face="Arial">0.1</font></td>
+									<td width="99" align="center">
+									<font face="Arial">[0.2]</font></td>
+									<td width="84" align="center">
+									<font face="Arial">0</font></td>
+								</tr>
+								<tr>
+									<td width="73" align="center">
+									<font face="Arial">0.13</font></td>
+									<td width="99" align="center">
+									<font face="Arial">[0.4]</font></td>
+									<td width="84" align="center">
+									<font face="Arial">0</font></td>
+								</tr>
+								<tr>
+									<td width="73" align="center">
+									<font face="Arial">...</font></td>
+									<td width="99" align="center">
+									<font face="Arial">...</font></td>
+									<td width="84" align="center">
+									<font face="Arial">...</font></td>
+								</tr>
+								<tr>
+									<td width="73" align="center">
+									<font face="Arial">0.6</font></td>
+									<td width="99" align="center">
+									<font face="Arial">[0.38]</font></td>
+									<td width="84" align="center">
+									<font face="Arial">1</font></td>
+								</tr>
+								<tr>
+									<td width="73" align="center">
+									<font face="Arial">0.7</font></td>
+									<td width="99" align="center">
+									<font face="Arial">[0.9]</font></td>
+									<td width="84" align="center">
+									<font face="Arial">1</font></td>
+								</tr>
+							</table>
+							</div><font face="Arial">　
+							</font>
+							</li>
+							<li>
+							<p align="justify"><font face="Arial">click <a href="output.txt">here</a> 
+							for a sample data of one fitted model </font></li>
+							<li>
+							<p align="justify"><font face="Arial">click <a href="output3.txt">here</a> 
+							for a sample data of two fitted models</font></li>
+						</ul>
+						<p align="justify"><font face="Arial">After you have specified the path to your model output file click the 
+			  <input type="submit" name="submit0" id="submit0" value="Analysis" /> button. The evaluation of the output is 							starting immediately. 
+						The algorithm needs about 30 seconds to process your request.
+						</font>
+						</p>
+						<p align="justify">
+						<font face="Arial">We will launch our second version which will support loading pasted data, exporting PDF, 
+						DOC and LATEX format of the reports soon. 
+						</font> 
+						<p align="left"><font face="Arial"><b class="blue">Suggested 
+						citation:</b>&nbsp; The citations below conform to the styles 
+						used by the
+						<a href="http://www.nlm.nih.gov/bsd/uniform_requirements.html">
+						National Library of Medicine</a> and the
+						<a href="http://www.apastyle.org/elecref.html">American 
+						Psychological Association</a>, respectively.
+						</font>
+						</p>
+						<ol>
+							<li>
+							<p align="justify"><font face="Arial">DBMI fellows. Online 
+							Discrimination and Calibration Analysis. DBMI, UCSD 
+							[updated 2010 August 6]; Available from: http://dbmi.ucsd.ued/calibration.</font></li>
+							<li>
+							<p align="justify"><font face="Arial">DBMI fellows. Online 
+							Discrimination and Calibration Analysis. Retrieved 
+							on [updated 2010 August 6] from http://dbmi.ucsd.ued/calibration.</font></li>
+						</ol>
+						<p align="justify">
+						<font face="Arial">
+						<b class="blue">Acknowledgment:</b>&nbsp; This web page 
+						is powered by PHP and MATLAB.<br></br>
+						<br>If you have any questions, please contact:</font><p align="center">
+						<font face="Arial">&nbsp;<a href="mailto:x1jiang@ucsd.edu">x1jiang@ucsd.edu</a>,<br>
+&nbsp;<a href="mailto:mosl@ucsd.edu">mosl@ucsd.edu</a> </br>
+
+						
+						</font>
+						
+						</td>
+						
+						
+				</table>
+				<font face="Arial">&nbsp;　<!--==========   Close outside border   ==========--></font></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<font face="Arial">&nbsp;(Page last updated: Aug 6, 2010)
+
+</font>
+
+</div>
+
+</body>
+
+</html>

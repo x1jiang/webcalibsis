@@ -1,0 +1,5 @@
+<tr>
+		<td align="center" bordercolor="#000000" colspan="6">
+		<font face="Arial Unicode MS" size="4">Statistical significance of the 
+		difference between two AUCs t=%.4f</font></td>
+	</tr>

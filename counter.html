@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>JavaScript Clock</title>
+
+
+<style type="text/css">
+#clock { font-family: Arial, Helvetica, sans-serif; font-size: 1em;
+color: black; background-color: white; border: 2px solid black; padding: 4px; }
+</style>
+
+<script type="text/javascript">
+<!--
+startTime = new Date ( );
+startSecs = Math.floor(startTime.getTime()/1000);
+
+function init ( )
+{
+  timeDisplay = document.createTextNode ( "" );
+  document.getElementById("clock").appendChild ( timeDisplay );
+}
+
+function updateClock ( )
+{
+  var currentTime = new Date ( );
+
+  var currSecs = Math.floor(currentTime.getTime()/1000);
+  var elapsed = currSecs - startSecs;
+
+  var currentHours = Math.floor(elapsed/3600);
+  var currentMinutes = Math.floor((elapsed - currentHours*3600)/60);
+  var currentSeconds = elapsed - currentHours*3600 - currentMinutes*60;
+
+  // Pad the minutes and seconds with leading zeros, if required
+  currentHours = ( currentHours < 10 ? "0" : "" ) + currentHours;
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+
+  // Compose the string for display
+  var currentTimeString = "Elapsed time: " + currentHours + ":" + currentMinutes + ":" + currentSeconds ;
+
+  // Update the time display
+  document.getElementById("clock").firstChild.nodeValue =  currentTimeString ;
+}
+
+// -->
+</script>
+
+</head>
+<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+
+<!-- <div style="clear: both;"> </div> -->
+
+
+<div style="width: 23em; text-align: center; margin: 20px auto;">
+  <span id="clock">&nbsp;</span>
+</div>
+
+
+</body>
+</html>
